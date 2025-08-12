@@ -2,50 +2,24 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Homepage Search Bar</title>
+        <title>{% block title %} Tasty Bites {% endblock %}</title>
         <style>
-            body {
-                font-family: Arial, sans-serif;
-                background-color: #f8f9fa;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                height: 100vh;
-            }
-            .search-container {
-                background-color: white;
-                padding: 10px 20px;
-                align-items: center;
-                border-radius: 25px;
-                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-                display: flex;
-                width: 300px;
-            }
-            .search-container input {
-                border: none;
-                outline: none;
-                width: 100%;
-                font-size: 16px;
-                padding: 8px
-            }
-
-            .search-container button{
-                padding: 8px 12px;
-                border: none;
+            footer {
+                background-color: #333;
                 color: white;
-                border-radius: 20px;
-                background: #007bff;
-                cursor: pointer;
-            }
-            .search-container button:hover {
-                background: #0056b3;
+                text-align: center;
+                padding: 15px 0;
+                position: fixed;
+                bottom: 0;
+                width: 100%;
+                font-size: 14px;
             }
         </style>
     </head>
     <body>
-        <div class="search-container">
-            <input type="text" placeholder="search menu items">
-            <button> Search </button>
-        </div>
+        {% block content %}{% endblock %}
+        <footer>
+            <p> @ 2025 Tasty Bites Restaurant | All rights reserved</p>
+        </footer>
     </body>
 </html>
