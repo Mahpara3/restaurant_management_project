@@ -2,23 +2,67 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>Customer Feedback</title>
+        <title>Contact Form</title>
         <style>
-            footer{
-                background-color: #333;
+            body {
+                background-color: #f8f9fa;
+                font-family: Arial, sans-serif;
+                align-tems: center;
+                display: flex;
+                justify-content: center;
+                height: 100vh;
+            }
+            form{
+                background: white;
+                paddings: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+                width: 300px;
+            }
+            input, textarea, button{
+                width: 100%;
+                margin-bottom: 10px;
+                padding: 8px;
+                border-radius: 4px;
+                border: 1px solid #ccc;
+            }
+            button {
+                background-color: #007bff;
                 color: white;
-                text-align: center;
-                padding: 15px 0;
-                font-size: 14px;
+                border: none;
+                cursor: pointer;
             }
-            footer p {
-                margin: 5px 0;
+            button:hover {
+                background-color: #0056b3;
             }
+            .error {
+                color: red;
+                font-size: 14px
+            }
+        </style>
     </head>
     <body>
-        <footer>
-            <p> @ 2025 Tasty bites Restaurant | All Rights Reserved</p>
-            <p> Opening Hours: Mon-fri: 11am - 9pm, Sat-Sun: 10am-10pm</p>
-        </footer>
+        <form id="contactForm">
+            <h2>Contact Us</h2>
+            <input type="text" id="name" placeholder="Your Name">
+            <input type="email" id="email" placeholder="Your Name">
+            <textarea id="message" placeholder="Your Message"></textarea>
+            <p class="error" id="errorMessage"></p>
+            <button type="submit"> Send </button>
+        </form>
+        <script>
+            document.getElementById("contactForm").addEventListener("submit",function(event) {
+                let name = document.getElementById("name").value.trim();
+                let email = document.getElementById("email").value.trim();
+                let errorMessage =  document.getElementById("errorMessage");
+
+                if (name === "" || email === ""){
+                    errorMessage.textContent = "Please fill both name and email.";
+                    event.preventDefault();
+                } else {
+                    errorMessage.textContent = "";
+                }
+            })
+        </script>
     </body>
 </html>
