@@ -3,14 +3,22 @@
     <head>
         <meta charset="UTF-8">
         <title>Customer Feedback</title>
-        <link rel="stylesheet" href="{% static 'css/about.css' %}">
+        <style>
+            footer{
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 15px 0;
+                font-size: 14px;
+            }
+            footer p {
+                margin: 5px 0;
+            }
     </head>
     <body>
-        <h1> We value your feedback! </h1>
-        <form method="POST">
-            {% csrf_token %}
-            {{form.as_p}}
-            <button type="submit"> Submit </button>
-        </form>
+        <footer>
+            <p> @ 2025 Tasty bites Restaurant | All Rights Reserved</p>
+            <p> Opening Hours: Mon-fri: 11am - 9pm, Sat-Sun: 10am-10pm</p>
+        </footer>
     </body>
 </html>
