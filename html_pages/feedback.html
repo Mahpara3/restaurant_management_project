@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Customer Feedback</title>
+        <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    </head>
+    <body>
+        <h1> We value your feedback! </h1>
+        <form method="POST">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit"> Submit </button>
+        </form>
+    </body>
+</html>
